@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hezron & Caroline Wedding</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css"/>
+    <script src="countdown/simplyCountdown.min.js"></script>
+    <!-- boostrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <section id="opening">
+    <div class="undangan">
+        <div class="overlay">
+          <h1>Hezron & Caroline</h1>
+          <p>Hai Fulan</p>
+          <h3>Fulan</h3>
+          <button class="button" id="openInvitationBtn">Open Invitation <i class="fas fa-envelope"></i></button>
+        </div>
+      </div>
+    </section>
+    <section id="invitation" style="display: none;">
+    <div class="left-section">
+        <div class="invitation">
+            <div class="overlay">
+              <h1>Hezron & Caroline</h1>
+              <p>Hai</p>
+              <h3>Fulan</h3>
+              <button>Open Invitation</button>
+            </div>
+          </div>          
+    </div>
+    <!-- <section id="hero" class="hero justify-content-center align-items-center">
+        <main>
+            <p>Wedding Invitation</p>
+            <h1>Hezron & Caroline</h1>
+            <p>25 Januari 2025</p>
+            <a href="#rsvp" class="rsvp_btn">RSVP</a>
+            <img src="img/image.png" alt="image">
+        </main>
+    </section> -->
+    <div class="right-section">
+        <div class="container1">
+            <div class="invitation-content">
+                <h2>Wedding Invitation</h2>
+                <h1>Hezron & Caroline</h1>
+                <p class="date">25 Januari 2025</p>
+                <button class="rsvp-button">RSVP</button>
+                <div class="image-arch">
+                    <img src="image/prewed.svg" alt="Foto Hezron dan Caroline" class="main-photo">
+                </div>
+                <div class="garis-overlay">
+                    <img src="image/garis.svg" alt="Foto Hezron dan Caroline" class="garis-photo">
+                </div>
+                <div class="flower-overlay">
+                    <img src="image/flower.svg" alt="Bunga Dekorasi" class="flower-image">
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h1>The Wedding Of</h1>
+            <div class="section">
+                <div class="image-wrapper">
+                    <img src="image/fotocpw.svg" alt="Foto Perempuan" class="photo">
+                </div>
+                <p class="name">Caroline Lystia Rut Winasis</p>
+                <p class="details">Anak pertama dari<br>Bapak Tri Harto Winasis<br>& Ibu Dwi Handayani</p>
+                <div class="icon">
+                    <img src="image/instagram-icon.svg" alt="Instagram Icon">
+                </div>
+            </div>
+            <p class="and-symbol">&</p>
+            <div class="section">
+                <div class="image-wrapper">
+                    <img src="image/fotocpp.svg" alt="Foto Laki-laki" class="photo">
+                </div>
+                <p class="name">Hezron Dena Wandray</p>
+                <p class="details">Anak pertama dari<br>Bapak Dedy Budi Wandray<br>& Ibu Purnama Risma Tua Silalahi</p>
+                <div class="icon">
+                    <img src="image/instagram-icon.svg" alt="Instagram Icon">
+                </div>
+            </div>
+            </div>
+            <div class="portraits-section">
+                <h1>Portraits of Us</h1>
+                <div class="portraits-gallery">
+                    <div class="portrait-row">
+                        <div class="portrait-item">
+                            <img src="image/1.svg" alt="Portrait 1">
+                        </div>
+                        <div class="portrait-item">
+                            <img src="image/2.svg" alt="Portrait 2">
+                        </div>
+                    </div>
+                    <div class="portrait-row alt">
+                        <div class="portrait-item">
+                            <img src="image/3.svg" alt="Portrait 3">
+                        </div>
+                        <div class="portrait-item">
+                            <img src="image/4.svg" alt="Portrait 4">
+                        </div>
+                    </div>
+                    <div class="portrait-row">
+                        <div class="portrait-item">
+                            <img src="image/5.svg" alt="Portrait 5">
+                        </div>
+                        <div class="portrait-item">
+                            <img src="image/6.svg" alt="Portrait 6">
+                        </div>
+                    </div>
+                    <div class="portrait-row alt">
+                        <div class="portrait-item">
+                            <img src="image/3.svg" alt="Portrait 3">
+                        </div>
+                        <div class="portrait-item">
+                            <img src="image/4.svg" alt="Portrait 4">
+                        </div>
+                    </div>
+                    <div class="portrait-row">
+                        <div class="portrait-item">
+                            <img src="image/5.svg" alt="Portrait 5">
+                        </div>
+                        <div class="portrait-item">
+                            <img src="image/6.svg" alt="Portrait 6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-container">
+                <!-- Gambar Latar Belakang -->
+                <div class="background-image"></div>
+              
+                <!-- Elemen Jendela -->
+                <div class="window-image">
+                  <div class="flower-atas">
+                    <img src="image/flower2.svg" alt="Top Flower">
+                  </div>
+                  <div class="flower-side">
+                    <img src="image/flower3.svg" alt="Side Flower">
+                  </div>
+                  <div class="flower-left">
+                    <img src="image/flower4.svg" alt="Left Flower">
+                  </div>
+                  <div class="countdown-content">
+                    <h2>Countdown</h2>
+                    <div class="countdown-grid">
+                      <div class="countdown-box">5<br>Days</div>
+                      <div class="countdown-box">5<br>Hours</div>
+                      <div class="countdown-box">5<br>Minutes</div>
+                      <div class="countdown-box">5<br>Seconds</div>
+                    </div>
+                    <button class="add-to-calendar">Add to Calendar</button>
+                  </div>
+                </div>
+            
+
+            </div>
+              <section class="info">
+                <div class="info-container">
+                    <div class="col-md-8.col-10 text-center">
+                        <h1>Wedding Day</h1>
+                        <h2>SABTU, 25 JANUARI <br> 2025</h2>
+                    </div>
+                    <div class="pemberkatan col-md-8.col-10 text-center">
+                        <div class="isi">
+                            <h4>Pemberkatan</h4>
+                            <p class="jam">09.00 - 10.30</p>
+                            <h5>Gereja Kristus Gunung Putri</h5>
+                            <p class="alamat">Jalan Nanas VI Blok E7 No. 1-4, <br>
+                                Karanggan, Gunung Putri, Kabupaten <br>
+                                Bogor, Jawa Barat 16961
+                            </p>
+                            <img src="image/lokasi.png" alt="pin">
+                            <a href="https://maps.app.goo.gl/88k5teamW9xQo5v68">View Maps</a>
+                        </div>
+                        <div class="merak2">
+                            <img src="image/merak2.svg" alt="merak2">
+                        </div>
+                        <div class="bunga2">
+                            <img src="image/bunga2.svg" alt="bunga2">
+                        </div>
+                        <div class="daun2">
+                            <img src="image/daun2.svg" alt="daun2">
+                        </div>
+                    </div>
+                    <div class="resepsi col-md-8.col-10 text-center">
+                        <div class="isi">
+                            <h4>Resepsi</h4>
+                            <p class="jam">15.00 - 17.00</p>
+                            <h5>The Lodge at Jagorawi <br>
+                                Golf & Country Club</h5>
+                            <p class="alamat">Jl. Karanggan Muda, Karanggan, <br>
+                                Kec. Gn. Putri, Kabupaten Bogor, <br>
+                                Jawa Barat 16960
+                            </p>
+                            <img src="image/lokasi.png" alt="pin">
+                            <a href="https://maps.app.goo.gl/QqGZSutjKqnHyJQZA">View Maps</a>
+                        </div>
+                        <div class="merak1">
+                            <img src="image/merak1.svg" alt="merak1">
+                        </div>
+                        <div class="bunga1">
+                            <img src="image/bunga1.svg" alt="bunga1">
+                        </div>
+                        <div class="daun1">
+                            <img src="image/daun1.svg" alt="daun1">
+                        </div>
+                    </div>
+                    <div class="invitation-content">
+                        <div class="flower-wedding">
+                            <img src="image/flower.svg" alt="Bunga Dekorasi" class="flower-info">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="rsvp" class="rsvp">
+                <div class="rsvp-container">
+                    <div class="judul">
+                        <h1>RSVP</h1>
+                    </div>
+                    <div class="form-rsvp">
+                        <p>Please Confirm Your Attendance</p>
+                        <form action="">
+                            <div class="form">
+                                <label for="name">Full Name</label>
+                                <input type="text" name="name" id="name">
+                                <label for="no">No Handphone</label>
+                                <input type="text" name="no" id="no">
+                            </div>
+                            <div class="atte  ndance">
+                                <label for="attendance" class="attendance-label">Attendance</label>
+                                <div class="attendance-options">
+                                    <input type="radio" id="will-attend" name="attendance">
+                                    <label for="will-attend" class="option-label">Will Attend</label>
+                                    <input type="radio" id="unable-to-attend" name="attendance">
+                                    <label for="unable-to-attend" class="option-label">Unable to Attend</label>
+                                </div>
+                            </div>
+                            <div class="total">
+                                <label for="total">Total Attendance</label>
+                                <input type="number" name="total" id="total">
+                            </div>
+                            <button type="submit">Confirm</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="live">
+                <div class="live-container">
+                    <div class="judul">
+                        <h1>Live Streaming</h1>
+                    </div>
+                    <div class="thumbnail">
+                        <img src="image/thumbnail.svg" alt="live">
+                    </div>
+                    <a href="#livestream" target="_blank" class="btn btn-light btn-sm my-4">Watch Here</a>
+                </div>
+                
+            </section>
+             
+           
+            <section class="gift">
+                <div class="gift-container">
+                    <img src="image/Vector.svg" class="gift-flower" >
+                    <div class="judul">
+                        <h1>Wedding Gift</h1>
+                    </div>
+                    <div class="description">
+                        <p>Bagi keluarga dan sahabat yang ingin <br>
+                            mengirimkan hadiah, silakan mengirimkannya <br>
+                            melalui tautan berikut
+                        </p>
+                    </div>
+                    <div class="btn1">
+                        <button onclick="openPopup('gift')">Kirim Hadiah</button>
+                    </div>
+                    <div class="btn2">
+                        <button onclick="openPopup('bank')">Transfer Bank</button>
+                    </div>
+                </div>
+            </section>
+            <!-- pop up -->
+            <div class="popup-overlay" id="popup">
+                <div class="popup-content">
+                    <div class="popup-box" id="gift-box" style="display: none;">
+                        <div class="close1" onclick="closePopup()">X</div>
+                        <h2>Address</h2>
+                        <p>Griya Bukit Jaya Blok M15 no 14, <br>Tlajung Udik, Gunung Putri, <br>Kab. Bogor 16962</p>
+                        <button onclick="copyText('Griya Bukit Jaya Blok M15 no 14, Tlajung Udik, Gunung Putri, Kab. Bogor 16962')">Copy Address</button>
+                    </div>
+                    <div class="popup-box" id="bank-box" style="display: none;">
+                        <div class="close2" onclick="closePopup()">X</div>
+                        <h2>BCA</h2>
+                        <p>5721176275 - Caroline Lystia</p>
+                        <button onclick="copyText('5721176275 - Caroline Lystia')">Copy Bank Account</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <section class="health-protocol">
+                <div class="protocol-container">
+                    <div class="judul">
+                        <h1>Health Protocol</h1>
+                    </div>
+                    <div class="protocol-list">
+                        <div class="protocol-item">
+                            <img src="image/mask.svg" alt="Wearing a Mask">
+                            <p>Wearing a Mask</p>
+                        </div>
+                        <div class="protocol-item">
+                            <img src="image/wash.svg" alt="Wash Your Hand">
+                            <p>Wash Your Hand</p>
+                        </div>
+                        <div class="protocol-item">
+                            <img src="image/social.svg" alt="Social Distancing">
+                            <p>Social Distancing</p>
+                        </div>
+                        <div class="protocol-item">
+                            <img src="image/temperature.svg" alt="Temperature Check">
+                            <p>Temperature Check</p>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <section class="wedding-wish">
+                <div class="wish-container">
+                    <h2>Wedding Wish</h2>
+                    <form class="wish-form">
+                        <textarea placeholder="Give your wish..."></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                    <div class="wish-list">
+                        <div class="wish-item">
+                            <strong>Fulan</strong>
+                            <p>Selamat menempuh hidup baru</p>
+                        </div>
+                        <div class="wish-item">
+                            <strong>Fulan</strong>
+                            <p>Selamat menempuh hidup baru</p>
+                        </div>
+                        <div class="wish-item">
+                            <strong>Fulan</strong>
+                            <p>Selamat menempuh hidup baru</p>
+                        </div>
+                        <div class="wish-item">
+                            <strong>Fulan</strong>
+                            <p>Selamat menempuh hidup baru</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="wedding-invitation">
+                <div class="verse">
+                    <p>“Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”</p>
+                    <p class="source">(QS. Ar-Rum: 21)</p>
+                </div>
+                <div class="details">
+                    <h2>Wedding Invitation</h2>
+                    <h3>Hezron & Caroline</h3>
+                    <p>25 Januari 2025</p>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="footer-container">
+                    <p><b>Made With Love By</b></p>
+                    <div class="logo">
+                        <img src="image/logo.svg" alt="Logo">
+                        <p>all right reserved by diikatJanji</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+    </div>  
+    <button id="playButton">
+        <span id="icon">
+          <!-- Ikon Play -->
+          <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <!-- Ikon Pause -->
+          <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+          </svg>
+        </span>
+      </button>
+      <audio id="song" loop>
+        <source src="music/MUSIC JANJI SUCI.mp3" type="audio/mp3">
+      </audio>
+    </section>
+    
+    <script src="app.js"></script>  
+    
+</body>
+</html>
