@@ -85,35 +85,14 @@ body {
   }
   .countdown-content h2{
     font-size: 5vh;
-    margin-bottom: 12vh;
+    margin-bottom: 5vh;
     margin-top: -3em;
     font-family: 'Kaisei Opti', serif;
     color:  #653C3C;
-
   }
-  
-  .countdown-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin: 20px 0;
-    
-  }
-  
-  .countdown-box {
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
-    font-family: 'Kaisei Opti', serif;
-    color:  #653C3C;
-    font-size: 1.2em;
-  }
-  
 
   .add-to-calendar {
-    width: 100%;
+    width: 30%;
     padding: 10px;
     background-color: #5A2C2C;
     color: #E7E7E7;
@@ -123,7 +102,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     font-family: 'Kaisei Opti', serif;
-    margin-top: 2em !important;
+    margin-top: -1em !important;
 }
 
 .add-to-calendar:hover {
@@ -1459,4 +1438,40 @@ form button:hover {
   #playButton:hover {
     background-color: #444444;
   }
-    
+
+
+
+.simply-countdown {
+    overflow: hidden;
+    display: table;
+    margin-left: 20vh;
+    padding: 5vh;
+    width: 70%;
+  }
+  .simply-countdown > .simply-section {
+    width: 5vh;
+    height: 5vh;
+    padding: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin: 10px;
+    background: #fff;
+    opacity: 85%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 10%;
+  }
+  .simply-countdown > .simply-section .simply-amount,
+  .simply-countdown > .simply-section .simply-word {
+      display: block;
+      text-align: center;
+      font-family: "Kaisei Opti", serif;
+      font-weight: 400;
+      font-style: normal;
+      color: #653C3C;
+  }
+  .simply-countdown > .simply-section .simply-amount{
+      font-size: 1.6rem;
+  }
+  
