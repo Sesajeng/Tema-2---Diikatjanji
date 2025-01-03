@@ -165,3 +165,120 @@ function setGoogleReminder() {
     // Buka link Google Calendar di tab baru
     window.open(url, '_blank');
   }
+
+//BUNGA GUGUR
+  const fallingLeavesContainer = document.querySelector('.falling-leaves');
+
+  function createLeaf() {
+      const leaf = document.createElement('div');
+      leaf.classList.add('leaf');
+
+      // Posisi horizontal acak (opsional)
+      const randomX = Math.random() * 100; // Dari 0% hingga 100%
+      leaf.style.left = `${randomX}vw`;
+
+      // Durasi animasi tetap untuk konsistensi
+      const duration = 5; // Durasi animasi 10 detik
+      leaf.style.animationDuration = `${duration}s`;
+
+      // Tambahkan daun ke kontainer
+      fallingLeavesContainer.appendChild(leaf);
+
+      // Hapus daun setelah animasi selesai
+      setTimeout(() => {
+          fallingLeavesContainer.removeChild(leaf);
+      }, duration * 1000);
+  }
+
+  // Tambahkan daun baru setiap 2 detik
+  setInterval(() => {
+      createLeaf();
+  }, 2000);
+
+//DAUN GUGUR
+    const fallingLeavesContainer1 = document.querySelector('.falling-leaves1');
+
+    function createLeaf1() {
+        const leaf1 = document.createElement('div');
+        leaf1.classList.add('leaf1');
+
+        // Posisi horizontal acak
+        const randomX = Math.random() * 100; // Dari 0% hingga 100%
+        leaf1.style.left = `${randomX}vw`;
+
+        // Durasi animasi tetap
+        const duration = 6; // Durasi animasi 6 detik
+        leaf1.style.animationDuration = `${duration}s`;
+
+        // Tambahkan daun ke kontainer
+        fallingLeavesContainer1.appendChild(leaf1);
+
+        // Hapus daun setelah animasi selesai
+        setTimeout(() => {
+            fallingLeavesContainer1.removeChild(leaf1);
+        }, duration * 1000);
+    }
+
+    // Tambahkan daun baru setiap 2 detik
+    setInterval(() => {
+        createLeaf1();
+    }, 4000);
+
+// BUNGA GUGUR
+const fallingLeavesContainer3 = document.querySelector('.falling-leaves3');
+
+function createLeaf3() {
+    const leaf3 = document.createElement('div');
+    leaf3.classList.add('leaf3'); // Pastikan kelasnya benar
+
+    // Posisi horizontal acak
+    const randomX = Math.random() * 100; // Dari 0% hingga 100%
+    leaf3.style.left = `${randomX}vw`;
+
+    // Durasi animasi tetap untuk konsistensi
+    const duration = 5; // Durasi animasi 5 detik
+    leaf3.style.animationDuration = `${duration}s`;
+
+    // Tambahkan daun ke kontainer
+    fallingLeavesContainer3.appendChild(leaf3);
+
+    // Hapus daun setelah animasi selesai
+    setTimeout(() => {
+        fallingLeavesContainer3.removeChild(leaf3);
+    }, duration * 1000);
+}
+
+// Tambahkan bunga baru setiap 2 detik
+setInterval(() => {
+    createLeaf3();
+}, 2000);
+
+// DAUN GUGUR
+const fallingLeavesContainer4 = document.querySelector('.falling-leaves4');
+
+function createLeaf4() {
+    const leaf4 = document.createElement('div');
+    leaf4.classList.add('leaf4'); // Pastikan kelasnya benar
+
+    // Posisi horizontal acak
+    const randomX = Math.random() * 100; // Dari 0% hingga 100%
+    leaf4.style.left = `${randomX}vw`;
+
+    // Durasi animasi tetap
+    const duration = 6; // Durasi animasi 6 detik
+    leaf4.style.animationDuration = `${duration}s`;
+
+    // Tambahkan daun ke kontainer
+    fallingLeavesContainer4.appendChild(leaf4);
+
+    // Hapus daun setelah animasi selesai
+    setTimeout(() => {
+        fallingLeavesContainer4.removeChild(leaf4);
+    }, duration * 1000);
+}
+
+// Tambahkan daun baru setiap 4 detik
+setInterval(() => {
+    createLeaf4();
+}, 4000);
+
