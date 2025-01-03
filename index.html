@@ -8,8 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap" rel="stylesheet">
+    
+    <!-- Simply Countdown -->
     <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css"/>
     <script src="countdown/simplyCountdown.min.js"></script>
+    
     <!-- boostrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -150,17 +153,11 @@
                   </div>
                   <div class="countdown-content">
                     <h2>Countdown</h2>
-                    <div class="countdown-grid">
-                      <div class="countdown-box">5<br>Days</div>
-                      <div class="countdown-box">5<br>Hours</div>
-                      <div class="countdown-box">5<br>Minutes</div>
-                      <div class="countdown-box">5<br>Seconds</div>
-                    </div>
+                    <div class="simply-countdown"></div>
+                    
                     <button class="add-to-calendar">Add to Calendar</button>
                   </div>
                 </div>
-            
-
             </div>
               <section class="info">
                 <div class="info-container">
@@ -398,8 +395,66 @@
         <source src="music/MUSIC JANJI SUCI.mp3" type="audio/mp3">
       </audio>
     </section>
-    
     <script src="app.js"></script>  
+    <script>
+    
+simplyCountdown('.simply-countdown' , {
+    year: 2025, // required
+    month: 1, // required
+    day: 25, // required
+    hours: 9, // Default is 0 [0-23] integer
+    words: { //words displayed into the countdown
+        days: { singular: 'hari', plural: 'hari' },
+        hours: { singular: 'jam', plural: 'jam' },
+        minutes: { singular: 'menit', plural: 'menit' },
+        seconds: { singular: 'detik', plural: 'detik' }
+    },
+});
+
+function openPopup(type) {
+    const popup = document.getElementById('popup');
+    const giftBox = document.getElementById('gift-box');
+    const bankBox = document.getElementById('bank-box');
+
+    // Reset visibility of pop-up boxes
+    giftBox.style.display = 'none';
+    bankBox.style.display = 'none';
+
+    // Display the selected pop-up
+    if (type === 'gift') {
+        giftBox.style.display = 'block';
+    } else if (type === 'bank') {
+        bankBox.style.display = 'block';
+    }
+
+    // Show the pop-up
+    popup.classList.add('active');
+    
+    // Add click listener for closing on outside click
+    document.addEventListener('click', closePopupOnOutsideClick);
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.classList.remove('active');
+    
+    // Remove click listener after popup is closed
+    document.removeEventListener('click', closePopupOnOutsideClick);
+}
+
+function closePopupOnOutsideClick(event) {
+    const popupContainer = document.querySelector('.popup-container'); // Pastikan ini adalah container utama
+    if (!popupContainer.contains(event.target)) {
+        closePopup();
+    }
+}
+
+function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        alert("Copied: " + text);
+    });
+}
+</script>
     
 </body>
 </html>
