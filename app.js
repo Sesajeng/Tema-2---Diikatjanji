@@ -282,3 +282,296 @@ setInterval(() => {
     createLeaf4();
 }, 4000);
 
+document.addEventListener('DOMContentLoaded', function () {
+  const invitationElements = document.querySelectorAll(
+    '.invitation-content h2, .invitation-content h1, .invitation-content .date'
+  );
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Tambahkan kelas animasi untuk memulai animasi
+        entry.target.classList.add('animate');
+      } else {
+        // Hapus kelas animasi agar dapat diulang jika diperlukan
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke setiap elemen undangan
+  invitationElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const invitationElements = document.querySelectorAll(
+    '#invitation .left-section .invitation h1, #invitation .left-section .invitation p, #invitation .left-section .invitation button'
+  );
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Tambahkan kelas animasi untuk memulai animasi
+        entry.target.classList.add('animate');
+      } else {
+        // Hapus kelas animasi agar dapat diulang jika diperlukan
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke setiap elemen dalam bagian invitation
+  invitationElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const containerElements = document.querySelectorAll('.container h1');
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Tambahkan kelas animasi untuk memulai animasi
+        entry.target.classList.add('animate');
+      } else {
+        // Hapus kelas animasi agar dapat diulang jika diperlukan
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke elemen dalam container
+  containerElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const nameElements = document.querySelectorAll('.name');
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Tambahkan kelas animasi untuk memulai animasi
+        entry.target.classList.add('animate');
+      } else {
+        // Hapus kelas animasi agar dapat diulang jika diperlukan
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke elemen dengan kelas .name
+  nameElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const detailsElements = document.querySelectorAll('.details');
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Tambahkan kelas animasi untuk memulai animasi
+        entry.target.classList.add('animate');
+      } else {
+        // Hapus kelas animasi agar dapat diulang jika diperlukan
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke elemen dengan kelas .name
+  detailsElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const iconElements = document.querySelectorAll('.icon img');
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Tambahkan kelas animasi untuk memulai animasi
+        entry.target.classList.add('animate');
+      } else {
+        // Hapus kelas animasi agar dapat diulang jika diperlukan
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke elemen dengan kelas .icon img
+  iconElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const portraitsElements = document.querySelectorAll('.portraits-section h1');
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Tambahkan kelas animasi untuk memulai animasi
+        entry.target.classList.add('animate');
+      } else {
+        // Hapus kelas animasi agar dapat diulang jika diperlukan
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke elemen dengan kelas .portraits-section h1
+  portraitsElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const portraitItems = document.querySelectorAll('.portrait-item img');
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Menambahkan animasi dengan delay berurutan
+        const item = entry.target;
+        const index = Array.from(portraitItems).indexOf(item);
+        setTimeout(() => {
+          item.classList.add('animate');
+        }, index * 350); // Tambahkan delay 400ms per item
+      } else {
+        // Menghapus kelas animasi untuk mengulang animasi
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke elemen dengan kelas .portrait-item img
+  portraitItems.forEach((element) => {
+    observer.observe(element);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const countdownElements = document.querySelectorAll('.countdown-content h2');
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Menambahkan kelas animasi untuk memulai animasi
+        entry.target.classList.add('animate');
+      } else {
+        // Menghapus kelas animasi untuk memungkinkan animasi diulang
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke elemen dengan kelas .countdown-content h2
+  countdownElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const infoElements = document.querySelectorAll('.info h1');
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Menambahkan kelas animasi untuk memulai animasi
+        entry.target.classList.add('animate');
+      } else {
+        // Menghapus kelas animasi untuk memungkinkan animasi diulang
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke elemen dengan kelas .countdown-content h2
+  infoElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const info2Elements = document.querySelectorAll('.info h2');
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Menambahkan kelas animasi untuk memulai animasi
+        entry.target.classList.add('animate');
+      } else {
+        // Menghapus kelas animasi untuk memungkinkan animasi diulang
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke elemen dengan kelas .countdown-content h2
+  info2Elements.forEach((element) => {
+    observer.observe(element);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const rsvpElements = document.querySelectorAll('.rsvp .judul h1');
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Menambahkan kelas animasi untuk memulai animasi
+        entry.target.classList.add('animate');
+      } else {
+        // Menghapus kelas animasi untuk memungkinkan animasi diulang
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke elemen dengan kelas .countdown-content h2
+  rsvpElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const liveElements = document.querySelectorAll('.live .judul h1');
+
+  // Observer untuk memulai animasi saat elemen terlihat di layar
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Menambahkan kelas animasi untuk memulai animasi
+        entry.target.classList.add('animate');
+      } else {
+        // Menghapus kelas animasi untuk memungkinkan animasi diulang
+        entry.target.classList.remove('animate');
+      }
+    });
+  });
+
+  // Terapkan observer ke elemen dengan kelas .countdown-content h2
+  liveElements.forEach((element) => {
+    observer.observe(element);
+  });
+});

@@ -83,13 +83,21 @@ body {
     border-radius: 10px;
     padding: 20px;
   }
-  .countdown-content h2{
+  .countdown-content h2 {
     font-size: 5vh;
     margin-bottom: 5vh;
     margin-top: -3em;
     font-family: 'Kaisei Opti', serif;
-    color:  #653C3C;
+    color: #653C3C;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: scale(0.5); /* Awalnya lebih kecil */
+    transition: all 1.5s ease-in-out;
   }
+  
+  .countdown-content h2.animate {
+    opacity: 1; /* Menjadi terlihat */
+    transform: scale(1); /* Ukuran penuh */
+  }  
 
   .add-to-calendar {
     width: 30%;
@@ -154,69 +162,49 @@ body {
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Slide down animation for h2 */
 .invitation-content h2 {
     font-size: 2.5vh;
     margin-bottom: 10px;
-    margin-top:1em;
+    margin-top: 1em;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: translateY(-50px); /* Mulai dari atas */
+    transition: all 1.5s ease-in-out;
 }
-.invitation-content h2 {
-    animation: slideDown 1.5s ease-in-out forwards;
+
+.invitation-content h2.animate {
     opacity: 1;
+    transform: translateY(0); /* Posisi akhir di tempat semula */
 }
 
-@keyframes slideDown {
-    0% {
-        transform: translateY(-50px); /* Mulai dari atas */
-        opacity: 0; /* Mulai dengan transparansi */
-    }
-
-    100% {
-        transform: translateY(0); /* Posisi akhir di tempat semula */
-        opacity: 1; /* Transparansi penuh di akhir */
-    }
-}
-
+/* Scale up animation for h1 */
 .invitation-content h1 {
     font-size: 3.5vh;
     margin-bottom: 10px;
     font-weight: bold;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: scale(0.5); /* Mulai dari skala kecil */
+    transition: all 1.5s ease-in-out;
 }
-.invitation-content h1 {
-    animation: scaleUp 1.5s ease-in-out forwards;
+
+.invitation-content h1.animate {
     opacity: 1;
+    transform: scale(1); /* Ukuran penuh */
 }
-@keyframes scaleUp {
-    0% {
-      transform: scale(0.5);
-    }
-  
-    100% {
-      transform: scale(1);
-    }
-  }
 
-
+/* Slide up animation for .date */
 .invitation-content .date {
     font-size: 2vh;
     margin-bottom: 20px;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: translateY(50px); /* Mulai dari bawah */
+    transition: all 1.5s ease-in-out;
 }
-.invitation-content .date {
-    animation: slideUp 1.5s ease-in-out forwards;
+
+.invitation-content .date.animate {
     opacity: 1;
+    transform: translateY(0); /* Posisi akhir di tempat semula */
 }
-
-@keyframes slideUp {
-    0% {
-        transform: translateY(50px); 
-        opacity: 0; 
-    }
-
-    100% {
-        transform: translateY(0); 
-        opacity: 1; 
-    }
-}
-
 
 .rsvp-button {
     width: 20%;
@@ -292,29 +280,49 @@ body {
 .info .pemberkatan .bunga2{
     position: absolute;
     top: 150px; /* Sesuaikan jarak vertikal */
-    left: -40px; /* Sesuaikan jarak horizontal */
+    left: -60px; /* Sesuaikan jarak horizontal */
     z-index: 1;
+    animation: swayBottomToTop 5s ease-in-out infinite; /* Animasi gerak kanan-kiri */
+    transform-origin: bottom center; /* Titik rotasi di bagian bawah elemen */
 }
 
 .info .resepsi .bunga1 {
     position: absolute;
     top: 160px; /* Sesuaikan jarak vertikal */
-    right: -35px; /* Sesuaikan jarak horizontal */
+    right: -50px; /* Sesuaikan jarak horizontal */
     z-index: 1;
+    animation: swayBottomToTop 5s ease-in-out infinite; /* Animasi gerak kanan-kiri */
+    transform-origin: bottom center; /* Titik rotasi di bagian bawah elemen */
 }
 
-.info .pemberkatan .daun2{
+
+.info .pemberkatan .daun2 {
     position: absolute;
     top: 60px; /* Sesuaikan jarak vertikal */
     right: -55px; /* Sesuaikan jarak horizontal */
     z-index: 0;
-} 
+    animation: swayBottomToTop 5s ease-in-out infinite; /* Animasi gerak kanan-kiri */
+    transform-origin: bottom center; /* Titik rotasi di bagian bawah elemen */
+  }
+  
+  /* Keyframes untuk gerakan kanan-kiri bagian bawah */
+  @keyframes swayBottomToTop {
+    0%, 100% {
+      transform: rotate(0deg); /* Posisi awal */
+    }
+    50% {
+      transform: rotate(5deg); /* Sedikit bergoyang ke kanan */
+    }
+  }
+  
 
 .info .resepsi .daun1 {
     position: absolute;
     top: 60px; /* Sesuaikan jarak vertikal */
     left: -60px; /* Sesuaikan jarak horizontal */
     z-index: 0;
+    animation: swayBottomToTop 5s ease-in-out infinite; /* Animasi gerak kanan-kiri */
+    transform-origin: bottom center; /* Titik rotasi di bagian bawah elemen */
 }
 
 /* Overlay bunga */
@@ -353,8 +361,35 @@ body {
 .flower-info {
     width: 110%;
     height: auto;
+    margin-top: 4.5em;
     object-fit: cover;
-    margin-top: 2em;
+    animation: sway 3s ease-in-out infinite;
+}
+
+.flower-info1 {
+    width: 110%;
+    height: auto;
+    object-fit: cover;
+    margin-top: 4.5em;
+}
+
+.flower-images {
+    width: 110%;
+    height: auto;
+    object-fit: cover;
+    animation: sway 3s ease-in-out infinite;
+}
+
+@keyframes sway {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px); 
+    }
+    100% {
+        transform: translateX(0); 
+    }
 }
 
 .invitation {
@@ -483,7 +518,15 @@ body {
     font-size: 3.7vh;
     margin-bottom: 6vh;
     margin-top: 6vh;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: scale(0.5); /* Awalnya lebih kecil */
+    transition: all 1.5s ease-in-out;
 }
+
+.info h1.animate {
+    opacity: 1; /* Menjadi terlihat */
+    transform: scale(1); /* Ukuran penuh */
+  }  
 
 .info h2 {
     width: auto;
@@ -491,6 +534,14 @@ body {
     font-size: 2.8vh;
     text-align: center; 
     margin-bottom: 6vh;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: translateY(50px); /* Mulai dari bawah */
+    transition: all 1.5s ease-in-out;
+}
+
+.info h2.animate {
+    opacity: 1;
+    transform: translateY(0); /* Posisi akhir di tempat semula */
 }
 
 /* .info h1{
@@ -595,19 +646,27 @@ body {
     margin-top: 10em;
 }
 
-
-
 .rsvp .judul h1 {
     font-family: "Kaisei Opti", serif;
     font-style: normal;
     font-size: 4vh;
     color: #653C3C;
-    margin-top: -0.6em; /* Hilangkan margin atas yang terlalu besar */
-    position: absolute; /* Memposisikan elemen di luar kontainer */
-    top: -10vh; /* Menyesuaikan posisi agar lebih tinggi di luar kotak */
-    left: 50%; /* Memposisikan di tengah horizontal */
-    transform: translateX(-50%); /* Mengoreksi posisi agar benar-benar berada di tengah */
+    position: absolute; /* Elemen diposisikan relatif terhadap kontainer terdekat yang memiliki posisi */
+    top: 50%; /* Atur posisi vertikal ke tengah */
+    left: 50%; /* Atur posisi horizontal ke tengah */
+    transform: translate(-50%, -50%); /* Koreksi agar benar-benar di tengah */
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: scale(0.5) translate(-50%, -50%); /* Awalnya lebih kecil dan tetap di tengah */
+    transition: all 1.5s ease-in-out; /* Animasi transisi */
+    margin-top: -11em; /* Hilangkan margin default */
 }
+
+.rsvp .judul h1.animate {
+    opacity: 1; /* Menjadi terlihat */
+    transform: scale(1) translate(-50%, -50%); /* Ukuran penuh dan tetap di tengah */
+}
+ 
+
 
 
 .form-rsvp{
@@ -729,27 +788,33 @@ form button:hover {
 /* Section Live Streaming */
 .live {
     font-family: "Kaisei Opti", serif;
-
     font-style: normal;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     background-size: cover;
-    text-align: center;/* Warna latar belakang */
     background-image: url('image/bgpatterncoklat.svg');
     
 }
 
-/* Judul Live Streaming */
+
 .live .judul h1 {
     font-size: 3.2vh;
-    color: #653C3C; /* Warna merah gelap */
+    color: #653C3C; 
     margin-bottom: 20px;
     margin-top: 5em;
+    opacity: 0; 
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 1.5s ease-in-out;
 }
 
-/* Container untuk gambar */
+.live .judul h1.animate {
+    opacity: 1; 
+    transform: scale(1) translate(-50%, -50%); 
+}
+
+
 .live-container .live-thumbnail img {
     width: 150%; /* Sesuaikan ukuran gambar */
     max-width: 1000px; /* Batas lebar maksimum */
@@ -1060,28 +1125,24 @@ form button:hover {
     text-align: center;
   }
   
-  .container h1 {
+ /* Gaya dasar untuk h1 */
+.container h1 {
     font-size: 3.2vh;
     margin-bottom: 6vh;
     margin-top: 6vh;
     color: #5a2c2c;
-  }
-
-  .container h1 {
-    animation: scaleUp 1.5s ease-in-out forwards;
-    opacity: 1;
-  }
-
-  @keyframes scaleUp {
-    0% {
-      transform: scale(0.5);
-    }
-  
-    100% {
-      transform: scale(1);
-    }
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: scale(0.5); /* Awalnya lebih kecil */
+    transition: all 1.5s ease-in-out;
   }
   
+  /* Gaya saat kelas animate ditambahkan */
+  .container h1.animate {
+    opacity: 1; /* Menjadi terlihat */
+    transform: scale(1); /* Ukuran penuh */
+  }
+  
+
   .section {
     margin-bottom: 40px;
   }
@@ -1104,12 +1165,30 @@ form button:hover {
     font-size: 2.8vh;
     margin: 0 0 10px;
     color: #5a2c2c;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: translateY(50px); /* Mulai dari bawah */
+    transition: all 1.5s ease-in-out;
   }
+
+
+  .name.animate {
+    opacity: 1;
+    transform: translateY(0); /* Posisi akhir di tempat semula */
+}
   
   .details {
     font-size: 1rem;
     line-height: 1.5;
+    color: #5a2c2c;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: translateY(50px); /* Mulai dari bawah */
+    transition: all 1.5s ease-in-out;
   }
+
+  .details.animate {
+    opacity: 1;
+    transform: translateY(0); /* Posisi akhir di tempat semula */
+}
   
   .and-symbol {
     font-size: 2rem;
@@ -1120,6 +1199,14 @@ form button:hover {
   .icon img {
     width: 30px;
     height: 30px;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: scale(0.5); /* Awalnya lebih kecil */
+    transition: all 1.5s ease-in-out;
+  }
+  
+  .icon img.animate {
+    opacity: 1; /* Menjadi terlihat */
+    transform: scale(1); /* Ukuran penuh */
   }
   
   .portraits-section {
@@ -1134,7 +1221,15 @@ form button:hover {
     margin-bottom: 6vh;
     margin-top: -2em;
     font-family: 'Kaisei Opti', serif;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: scale(0.5); /* Awalnya lebih kecil */
+    transition: all 1.5s ease-in-out;
   }
+  
+  .portraits-section h1.animate {
+    opacity: 1; /* Menjadi terlihat */
+    transform: scale(1); /* Ukuran penuh */
+  }  
   
   .portraits-gallery {
     display: grid;
@@ -1163,12 +1258,21 @@ form button:hover {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: translateY(50px); /* Awalnya berada di bawah */
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .portrait-item img.animate {
+    opacity: 1; /* Menjadi terlihat */
+    transform: translateY(0); /* Kembali ke posisi semula */
   }
   
   .portrait-item img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Efek hover */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   }
+  
   .countdown-section {
     background-image: url('image/BG3.svg'); /* Background cream */
     padding: 200px 5px;
@@ -1279,7 +1383,14 @@ form button:hover {
     margin-bottom: 10em;
     margin-top: 1em;
     font-family: 'Kaisei Opti', serif;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: translateY(-50px); /* Mulai dari atas */
+    transition: all 1.5s ease-in-out;
   }
+  #opening .undangan .overlay h1 {
+    opacity: 1;
+    transform: translateY(0); /* Posisi akhir di tempat semula */
+}
   #opening .undangan .overlay h2 {
     font-size: 2.5rem;
     margin-bottom: 10em;
