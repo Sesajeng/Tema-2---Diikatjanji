@@ -57,44 +57,46 @@ function copyText(text) {
     });
 }
 
-// MUSIC PLAY
 const playButton = document.getElementById('playButton');
 const playIcon = document.getElementById('playIcon');
 const pauseIcon = document.getElementById('pauseIcon');
-const buttonText = document.getElementById('buttonText');
-let isPlaying = false;
-
-// Mulai memutar musik saat halaman dimuat
-// window.onload = function () {
-//   song.volume = 0.4;
-//   song.play();
-//   isPlaying = true;
-//   updatePlayButtonIcon();
-// };
-
-// Fungsi toggle untuk musik Play/Pause
-playButton.addEventListener('click', function () {
-  if (isPlaying) {
-    song.pause();
-  } else {
-    song.play();
-  }
-  isPlaying = !isPlaying;
-  updatePlayButtonIcon();
-});
+const song = document.getElementById('song');
+const openInvitationBtn = document.getElementById('openInvitationBtn'); // Tombol Open Invitation
+let isPlaying = false; // Default: musik berhenti
 
 // Fungsi untuk memperbarui ikon pada tombol Play/Pause
 function updatePlayButtonIcon() {
   if (isPlaying) {
     playIcon.style.display = 'none';
-    pauseIcon.style.display = 'inline';
-    buttonText.textContent = 'Pause Music';
+    pauseIcon.style.display = 'inline'; // Tampilkan ikon Pause
   } else {
-    playIcon.style.display = 'inline';
+    playIcon.style.display = 'inline'; // Tampilkan ikon Play
     pauseIcon.style.display = 'none';
-    buttonText.textContent = 'Play Music';
   }
 }
+
+// Fungsi toggle untuk musik Play/Pause
+playButton.addEventListener('click', function () {
+  if (isPlaying) {
+    song.pause();
+    isPlaying = false;
+  } else {
+    song.play();
+    isPlaying = true;
+  }
+  updatePlayButtonIcon();
+});
+
+// Fungsi untuk memulai musik ketika tombol Open Invitation diklik
+openInvitationBtn.addEventListener('click', function () {
+  if (!isPlaying) {
+    song.volume = 0.4; // Atur volume awal
+    song.play();
+    isPlaying = true;
+    updatePlayButtonIcon();
+  }
+});
+
 
 simplyCountdown('.simply-countdown' , {
     year: 2025, // required
@@ -150,4 +152,16 @@ function setGoogleReminder() {
   window.open(url, '_blank');
 }
 
-
+// PENGINGAT
+function setGoogleReminder() {
+    const title = encodeURIComponent('Wedding Ceremony');
+    const details = encodeURIComponent('Hezron & Caroline Wedding');
+    const location = encodeURIComponent('Lokasi Pernikahan');
+    const startDate = '20241227T000000Z'; // Tanggal mulai event (UTC)
+    const endDate = '20241227T235900Z'; // Tanggal selesai event (UTC)
+  
+    const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}&dates=${startDate}/${endDate}`;
+  
+    // Buka link Google Calendar di tab baru
+    window.open(url, '_blank');
+  }
