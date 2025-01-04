@@ -670,15 +670,20 @@ body {
     transform: scale(1) translate(-50%, -50%); /* Ukuran penuh dan tetap di tengah */
 }
  
-
-
-
 .form-rsvp{
     font-family: "Kaisei Opti", serif;
     font-weight: 400;
     font-style: normal;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: translateY(50px); /* Awalnya bergeser ke bawah */
+    transition: all 1.5s ease-in-out; /* Animasi transisi */
 }
 
+/* Ketika animasi dimulai */
+.form-rsvp.animate-form {
+    opacity: 1; /* Muncul */
+    transform: translateY(0); /* Kembali ke posisi awal */
+}
 /* Form */
 .form-rsvp p {
     font-size: 1.8vh;
