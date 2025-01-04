@@ -1,7 +1,10 @@
 .simply-countdown {
+  opacity: 0;
+  transform: translateX(50px); /* Awalnya dari kanan */
+  transition: all 1.5s ease-in-out;
   overflow: hidden;
   display: table;
-  margin-left: 20vh;
+  margin-left: 15vh;
   padding: 10vh;
   width: 70%;
 }
@@ -30,4 +33,12 @@
 }
 .simply-countdown > .simply-section .simply-amount{
     font-size: 1.6rem;
+}
+.simply-countdown.animate {
+  opacity: 1;
+  transform: translateX(0); /* Posisi normal */
+}
+/* Elemen bagian kiri (jika ada split animasi untuk sisi kiri) */
+.simply-countdown.left {
+  transform: translateX(-50px); /* Awalnya dari kiri */
 }
