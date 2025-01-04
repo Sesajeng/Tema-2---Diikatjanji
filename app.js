@@ -549,21 +549,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
   const rsvpElements = document.querySelectorAll('.rsvp .judul h1');
+  const formElement = document.querySelector('.form-rsvp');
 
   // Observer untuk memulai animasi saat elemen terlihat di layar
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Menambahkan kelas animasi untuk memulai animasi
+        // Animasi untuk judul H1
         entry.target.classList.add('animate');
+
+        // Animasi untuk form RSVP
+        if (entry.target.tagName === 'H1') {
+          formElement.classList.add('animate-form');
+        }
       } else {
         // Menghapus kelas animasi untuk memungkinkan animasi diulang
         entry.target.classList.remove('animate');
+        formElement.classList.remove('animate-form');
       }
     });
   });
 
-  // Terapkan observer ke elemen dengan kelas .countdown-content h2
+  // Terapkan observer ke elemen judul H1
   rsvpElements.forEach((element) => {
     observer.observe(element);
   });
