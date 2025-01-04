@@ -468,25 +468,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
   const countdownElements = document.querySelectorAll('.countdown-content h2');
+  const simplyCountdown = document.querySelector('.simply-countdown');
 
   // Observer untuk memulai animasi saat elemen terlihat di layar
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Menambahkan kelas animasi untuk memulai animasi
-        entry.target.classList.add('animate');
+        // Animasi untuk h2
+        if (entry.target.tagName === 'H2') {
+          entry.target.classList.add('animate');
+        }
+
+        // Animasi untuk simply-countdown
+        if (entry.target.classList.contains('simply-countdown')) {
+          entry.target.classList.add('animate');
+        }
       } else {
-        // Menghapus kelas animasi untuk memungkinkan animasi diulang
+        // Menghapus kelas animasi agar animasi dapat diulang
         entry.target.classList.remove('animate');
       }
     });
   });
 
-  // Terapkan observer ke elemen dengan kelas .countdown-content h2
+  // Terapkan observer ke elemen h2
   countdownElements.forEach((element) => {
     observer.observe(element);
   });
+
+  // Terapkan observer ke simply-countdown
+  if (simplyCountdown) {
+    observer.observe(simplyCountdown);
+  }
 });
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const infoElements = document.querySelectorAll('.info h1');
