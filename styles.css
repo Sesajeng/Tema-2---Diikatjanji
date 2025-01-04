@@ -60,19 +60,23 @@ body {
   
   .flower-side img {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 29em;
     transform: translateY(-50%);
     width: 30%;
     z-index: 3;
+    animation: swayBottomToTop 5s ease-in-out infinite; /* Animasi gerak kanan-kiri */
+    transform-origin: bottom center; /* Titik rotasi di bagian bawah elemen */
   }
   .flower-left img {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 3em;
     transform: translateY(-50%);
     width: 30%;
     z-index: 3;
+    animation: swayBottomToTop 5s ease-in-out infinite; /* Animasi gerak kanan-kiri */
+    transform-origin: bottom center; /* Titik rotasi di bagian bawah elemen */
   }
   
   /* Konten Countdown */
